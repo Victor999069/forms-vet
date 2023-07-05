@@ -1,10 +1,18 @@
-export default function Button({props}) {
-    const { type, clType, action, text } = props;
+import './button.css';
+import { useNavigate } from 'react-router-dom';
 
-    return <button 
-        type={type !== undefined ? type : 'button'} 
-        className={`button-${clType !== undefined ? clType : 'primary'}`} 
-        onClick={action}
-    >{text}
-    </button>;
+export default function Button({type, clname, route, text}) {
+    const navigate = useNavigate();
+
+    const routeRedirect = () => {
+        navigate(route);
+    };
+
+    return(
+        <button 
+            type={type !== undefined ? type : 'button'} 
+            className={`button-${clname !== undefined ? clname : 'primary'}`} 
+            onClick={routeRedirect}
+        >{text}</button>
+    );
 }

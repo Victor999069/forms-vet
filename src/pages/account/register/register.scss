@@ -1,0 +1,86 @@
+@mixin space-left($percent) {
+    width: calc($percent - 28px);
+}
+@mixin border-radius($size) {
+    border-radius: $size;
+    -webkit-border-radius: $size;
+    -moz-border-radius: $size;
+}
+
+.form-container {
+    margin: 32px auto;
+    border: 1px solid #ccc;
+    width: 440px;
+    @include border-radius(4px);
+    box-shadow: 2px 2px 2px #ddd;
+    &__content {
+        display: flex;
+        flex-direction: column;
+        label {
+            display: block;
+            font-family: 'Calibri';
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 2px;
+            margin-left: 2px;
+            line-height: 1;
+        }
+    }
+    &__fr-section {
+        margin: 8px 12px;
+        padding: 0;
+        @include border-radius(4px);
+        &__header {
+            font-size: 16px;
+            color: #333;
+            border-bottom: 2px solid #ccc;
+            margin-bottom: 4px;
+        }
+        &__input-group {
+            display: flex;
+            flex-direction: column;
+            padding-left: 6px;
+            &__block {
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                justify-content: flex-end;
+                padding: 4px 0;
+            }
+        }
+    }
+    &__fr-control {
+        display: flex;
+        padding: 6px 0;
+        margin: 0 12px;
+    }
+}
+.fr-col {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 16px 0;
+}
+.fr-col > .fr-row {
+    box-sizing: content-box;
+    margin: 4px 14px;
+}
+.fr-row.w-xs {
+    @include space-left(20%);
+}
+.fr-row.w-sm {
+    @include space-left(25%);
+}
+.fr-row.w-md {
+    @include space-left(33.33%);
+}
+.fr-row.w-lg {
+    @include space-left(50%);
+}
+.fr-row.w-xl {
+    @include space-left(75%);
+}
+.fr-row.w-max {
+    @include space-left(100%);
+}

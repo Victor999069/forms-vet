@@ -21,10 +21,8 @@ const routes = createBrowserRouter([
         {
           path: '/conta/', 
           children: [
-            {
-              path: 'perfil',
-              element: <Profile />
-            }
+            { path: 'perfil', element: <Profile /> },
+            { path: 'cadastro', element: <Register /> }
           ]
         },
         { path: '*', element: <NotFound /> }
@@ -35,7 +33,6 @@ const routes = createBrowserRouter([
       element: <AccountLayout />,
       children: [
         { path: 'login', element: <Login /> },
-        { path: 'cadastro', element: <Register /> },
         { path: 'recuperar-senha', element: <PasswordRecover /> },
         { path: '*', element: <NotFound /> }
       ]

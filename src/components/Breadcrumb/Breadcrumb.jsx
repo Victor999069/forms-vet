@@ -1,5 +1,7 @@
+import './breadcrumb.css';
+
 export default function Breadcrumb() {
-    const bcList = ["conta", "login"];
+    const bcList = ["home", "conta", "login"];
 
     return(
         <div className="breadcrumb">
