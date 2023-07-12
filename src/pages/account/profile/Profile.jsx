@@ -1,6 +1,8 @@
+import './profile.scss';
+
 const Profile = () => {
     return(
-        <h1>Profile</h1>
+        <div className="form-container"></div>
     );
 };
 
