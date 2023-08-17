@@ -1,6 +1,8 @@
 import { useState } from "react";
+import BaseLayout from "../../../template/layout/BaseLayout";
 
-const AnimalRegister = () => {
+
+const Registe_animal = () => {
     const [idanimal, setIdAnimal] = useState('');
     const [nomeanimal, setNomeAnimal] = useState('');
     const [particularidade, setParticularidade] = useState('');
@@ -38,8 +40,8 @@ const AnimalRegister = () => {
     };
 
     return(
-        <>
-            <div>
+        <BaseLayout>
+            <div className="container-id">
                 <label htmlFor="idanimal">Id Animal:</label>
                 <input
                     type="text"
@@ -49,7 +51,7 @@ const AnimalRegister = () => {
                     required
                 />
             </div>
-            <div>
+            <div className="container-animal">
                 <label htmlFor="nomeanimal">Nome Animal:</label>
                 <input
                     type="text"
@@ -59,7 +61,7 @@ const AnimalRegister = () => {
                     required
                 />
             </div>
-            <div>
+            <div className="container-particularidade">
                 <label htmlFor="particularidade">Particularidade:</label>
                 <input
                     type="text"
@@ -69,7 +71,7 @@ const AnimalRegister = () => {
                     required
                 />
             </div>
-            <div>
+            <div className="container-cartao">
                 <label htmlFor="cartaovacina">Cartão Vacina:</label>
                 <input
                     type="text"
@@ -79,7 +81,7 @@ const AnimalRegister = () => {
                     required
                 />
             </div>
-            <div>
+            <div className="container-idade">
                 <label htmlFor="idade">Idade:</label>
                 <input
                     type="text"
@@ -89,7 +91,7 @@ const AnimalRegister = () => {
                     required
                 />
             </div>
-            <div>
+            <div className="container-raca">
                 <label htmlFor="raca">Raça:</label>
                 <input
                     type="text"
@@ -99,7 +101,7 @@ const AnimalRegister = () => {
                     required
                 />
             </div>
-            <div>
+            <div className="container-sexo">
                 <label htmlFor="sexo">Sexo:</label>
                 <input
                     type="text"
@@ -109,8 +111,8 @@ const AnimalRegister = () => {
                     required
                 />
             </div>
-        </>
+        </BaseLayout>
     );
 };
 
-export default AnimalRegister;
+export default Registe_animal;
