@@ -24,6 +24,7 @@ const Navbar = () => {
             </ul>
             <div className="navbar__nav-control">
                 <Button text="Cadastro" route="/conta/cadastro" />
+                <Button text="Cadastro Animal" route="/conta/cadastro-animal" />
             </div>
         </nav>
     );
