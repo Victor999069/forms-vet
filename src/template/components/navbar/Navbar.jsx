@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import './navbar.scss';
-import Button from '../../../components/button/Button';
+import MenuPanel from '../../../components/account-panel/MenuPanel';
 
 const Navbar = () => {
     const links = [
@@ -13,17 +13,17 @@ const Navbar = () => {
     return(
         <nav className="navbar">
             <div className="navbar__nav-logo">
-                <img src="" alt="" />
+                <Link to="/home" className="navbar__nav-logo__logo-link">Logo</Link>
             </div>
             <ul className="navbar__nav-menu">
                 {links.map((el, i) =>
                 <li key={i}>
-                    <Link to={el.link}>{el.text}</Link>
+                    <Link to={el.link} className="menu-link">{el.text}</Link>
                 </li>
                 )}
             </ul>
             <div className="navbar__nav-control">
-                <Button text="Cadastro" route="/conta/cadastro" />
+                <MenuPanel />
             </div>
         </nav>
     );

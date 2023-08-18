@@ -2,37 +2,75 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 12px;
-    height: 56px;
-    box-shadow: 0 1px 4px #aaa;
-    background: linear-gradient(0rad, #eee 0%, #fff 100%);
+    padding: 6px 8px 0 8px;
+    border-bottom: 0;
+    background-color: #0d5c66;
     &__nav-logo {
-        border: 1px solid #aaa;
-        width: 40px;
-        height: 40px;
+        width: auto;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &__logo-link {
+            display: block;
+            font-family: 'Candara';
+            font-size: 32px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 1px 1px 2px #ff5252;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
     }
     &__nav-menu {
         display: flex;
+        align-items: center;
         li {
             list-style: none;
-            a {
-                display: block;
-                text-decoration: none;
-                padding: 6px 10px;
-                border-bottom: 1px solid transparent;
-                color: #333;
-                font-size: 16px;
-                &:active, &:hover {
-                    border-color: #aaa;
-                    text-shadow: 1px 1px 2px #7c7c7c;
-                }
+            &:not(:last-child) {
+                margin-right: 14px;
             }
-            &:not(:first-child) {
-                margin-left: 4px;
+        }
+        .menu-link {
+            position: relative;
+            display: block;
+            font-family: 'Tahoma';
+            font-size: 18px;
+            color: #eee;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 10px 10px;
+            border-top-right-radius: 10px;
+            &::before, &::after {
+                position: absolute;
+                display: block;
+                content: '';
+                top: 0;
+                bottom: 0;
+                width: 10px;
+                height: 100%;
+                transform: skew(10deg);
+                cursor: pointer;
+            }
+            &::before {
+                left: -5px;
+                border-top-left-radius: 10px;
+            }
+            &::after {
+                right: -5px;
+                border-top-right-radius: 10px;
+            }
+            &:active, &:active::before, &:active::after,
+            &:hover, &:hover::before, &:hover::after {
+                background-color: #e7e425;
+                text-decoration: underline;
+                color: #333;
             }
         }
     }
     &__nav-control {
-        
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 }

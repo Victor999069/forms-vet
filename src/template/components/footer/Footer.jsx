@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import './footer.scss';
-import { Icon } from '../../../components/Icons/Icon';
+import { MediaIcon } from '../../../components/media-Icons/MediaIcon';
 
 const Footer = () => {
     const mediaLinks = [
@@ -21,7 +21,7 @@ const Footer = () => {
                     {mediaLinks.map((el, index) =>
                     <li key={index}>
                         <Link to={el.link}>
-                            <Icon name={el.icon} />
+                            <MediaIcon name={el.icon} />
                         </Link>
                     </li>)}
                 </ul>
