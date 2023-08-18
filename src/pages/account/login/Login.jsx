@@ -1,5 +1,4 @@
 import { useState } from "react";
-import BaseLayout from "../../../template/layout/BaseLayout";
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -14,7 +13,7 @@ const Login = () => {
     };
 
     return(
-        <BaseLayout>
+        <>
             <div className="container-email">
                 <label htmlFor="email">E-mail:</label>
                 <input
@@ -35,7 +34,7 @@ const Login = () => {
                     required
                 />
             </div>
-        </BaseLayout>
+        </>
     );
 };
 
