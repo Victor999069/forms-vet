@@ -1,31 +1,59 @@
 import { Link } from 'react-router-dom';
 import './navbar.scss';
-import MenuPanel from '../../../components/account-panel/MenuPanel';
+import { PersonCircle } from '../../../components/style-icons/StyledIcons';
 
 const Navbar = () => {
-    const links = [
-        { text: "Home", link: "/" },
-        { text: "Contato", link: "/contato" },
-        { text: "Serviços", link: "/servicos" },
-        { text: "Sobre", link: "/sobre" }
-    ];
+    const navLinks = {
+        menu: [
+            { link: '/servicos', text: 'Serviços' },
+            { link: '/negocios', text: 'Negócios' },
+            { link: '/contato', text: 'Contato' },
+            { link: '/sobre', text: 'Sobre' }
+        ],
+        dropdown: [
+            {
+                icon: <PersonCircle />,
+                links: [
+                    { link: '/conta/cadastro', text: 'Cadastro' },
+                    { link: '/conta/login', text: 'Login' }
+                ]
+            }
+        ]
+    };
+
+    const closeMenu = () => {
+        const nav = document.querySelector('.header__hamburger-toggle');
+        nav.checked = false;
+    };
 
     return(
-        <nav className="navbar">
-            <div className="navbar__nav-logo">
-                <Link to="/home" className="navbar__nav-logo__logo-link">Logo</Link>
-            </div>
-            <ul className="navbar__nav-menu">
-                {links.map((el, i) =>
-                <li key={i}>
-                    <Link to={el.link} className="menu-link">{el.text}</Link>
-                </li>
-                )}
-            </ul>
-            <div className="navbar__nav-control">
-                <MenuPanel />
-            </div>
-        </nav>
+        <header className="header">
+            <Link to="/home" className="header__logo" onClick={closeMenu}>MyCompany</Link>
+            <input type="checkbox" id="hamb-ctrl" className="header__hamburger-toggle" />
+            <label htmlFor="hamb-ctrl" className="header__hamburger">
+                <span className="header__hamburger__hamburger-line"></span>
+            </label>
+            <nav className="header__nav">
+                <ul className="header__nav__menu">
+                    {navLinks.menu.map((item, index) =>
+                    <li key={index}>
+                        <Link to={item.link} onClick={closeMenu}>{item.text}</Link>
+                    </li>)}
+                </ul>
+                <ul className="header__nav__dropdown">
+                    {navLinks.dropdown.map((item, index) =>
+                    <li key={index}>
+                        <Link to="#" className="dropdown-icon">{item.icon}</Link>
+                        <ul className="dropdown-item">
+                            {item.links.map((subitem, idx) =>
+                            <li key={idx}>
+                                <Link to={subitem.link} onClick={closeMenu}>{subitem.text}</Link>
+                            </li>)}
+                        </ul>
+                    </li>)}
+                </ul>
+            </nav>
+        </header>
     );
 };
 

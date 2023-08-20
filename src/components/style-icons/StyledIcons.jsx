@@ -1,8 +1,10 @@
-const StyledIcons = ({children, name}) => {
+const StyledIcons = (props) => {
+    const {children, name, size} = props;
+
     return <svg 
         xmlns="http://www.w3.org/2000/svg" 
-        width="24" 
-        height="24" 
+        width={size === undefined ? 24 : size} 
+        height={size} 
         className={`bi bi-${name}`} 
         viewBox="0 0 16 16"
     >
