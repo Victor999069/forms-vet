@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import './navbar.scss';
-import { PersonCircle } from '../../../components/style-icons/StyledIcons';
+import { PersonCircle } from '../../components/style-icons/StyledIcons';
 
 const Navbar = () => {
     const navLinks = {
