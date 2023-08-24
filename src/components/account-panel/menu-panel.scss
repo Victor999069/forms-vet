@@ -1,0 +1,60 @@
+.control-item {
+    position: relative;
+    .icon-button {
+        display: flex;
+        background: none;
+        padding: 0;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        overflow: hidden;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+    }
+    .icon-button:focus ~ &__dropdown,
+    &__dropdown:active {
+        display: block;
+    }
+    .icon-button:active, .icon-button:hover {
+        background-color: #07343a;
+    }
+    .icon-button:active > svg, .icon-button:hover > svg {
+        fill: #eee;
+    }
+    .icon-button > svg {
+        fill: #fff;
+    }
+    &__dropdown {
+        position: absolute;
+        overflow: hidden;
+        display: none;
+        top: 25px;
+        right: 0;
+        width: 130px;
+        background-color: #e7e425;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        z-index: 1;
+        &__submenu {
+            &:not(:last-child) {
+                border-bottom: 1px solid #aaa;
+            }
+            a {
+                display: block;
+                text-align: center;
+                font-family: 'Tahoma';
+                font-size: 16px;
+                color: #333;
+                padding: 10px 0;
+                text-decoration: none;
+                &:active, &:hover {
+                    background-color: #1a9eaf;
+                    color: #eee;
+                }
+            }
+        }
+    }
+}

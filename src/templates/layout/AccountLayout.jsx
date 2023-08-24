@@ -1,5 +1,4 @@
 import { Outlet } from "react-router-dom";
-import FooterSecondary from "../FooterSecondary";
 
 const AccountLayout = () => {
     return(
@@ -7,7 +6,6 @@ const AccountLayout = () => {
             <main className="account-layout">
                 <Outlet />
             </main>
-            <FooterSecondary />
         </>
     );
 };
