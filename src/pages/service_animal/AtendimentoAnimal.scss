@@ -1,0 +1,49 @@
+/* Estilos gerais */
+.container-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Estilos para o formulário */
+  .container-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .container-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  /* Estilos para o botão de envio */
+  .container-group button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .container-group button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Layout geral */
+  .animal-care-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsividade */
+  @media (max-width: 600px) {
+    .animal-care-container {
+      padding: 10px;
+    }
+  }
+  
