@@ -1,3 +1,5 @@
+import './login.scss';
+import Button from '../../../components/button/Button';
 import { useState } from "react";
 
 const Login = () => {
@@ -13,7 +15,7 @@ const Login = () => {
     };
 
     return(
-        <>
+        <div className='container'>
             <div className="container-email">
                 <label htmlFor="email">E-mail:</label>
                 <input
@@ -34,7 +36,13 @@ const Login = () => {
                     required
                 />
             </div>
-        </>
+            <div className='container__fr-control'>
+                <Button clname="secondary" text="Cancelar"/>
+            </div>
+            <div className='container__fr-control'>
+                <Button clname="secondary" text="Login"/>
+            </div>
+        </div>
     );
 };
 

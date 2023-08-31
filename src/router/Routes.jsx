@@ -9,6 +9,7 @@ import Register from "../pages/account/register/Register";
 import PasswordRecover from "../pages/account/password_recover/PasswordRecover";
 import Login from "../pages/account/login/Login";
 import Budget from "../pages/budget/Budget";
+import Atendimento_animal from "../pages/service_animal/atendimento_animal";
 
 const routes = createBrowserRouter([
   {
@@ -29,7 +30,8 @@ const routes = createBrowserRouter([
       { path: 'login', element: <Login /> },
       { path: 'cadastro', element: <Register /> },
       { path: 'perfil', element: <Profile /> },
-      { path: 'recuperar-senha', element: <PasswordRecover /> }
+      { path: 'recuperar-senha', element: <PasswordRecover /> },
+      { path: 'Atendimento-animal', element: <Atendimento_animal /> }
     ]
   },
   { path: '*', element: <NotFound /> }

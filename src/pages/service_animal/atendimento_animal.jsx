@@ -1,79 +1,40 @@
-import { useState } from "react";
-import BaseLayout from "../../../template/layout/BaseLayout";
+import './AtendimentoAnimal.scss';
+import { useRef } from "react";
+
 
 const Atendimento_animal = () => {
-    const [dataAtendimento, setDataAtendimento] = useState();
-    const [animalNumber, setAnimalNumber] = useState('');
-    const [animalName, setAnimalName] = useState('');
-    const [particularity, setParticularity] = useState('');
-    const [treatment, setTreatment] = useState('');
-    const [weight, setWeight] = useState('');
-    const [registrationVaccine, setRegistrationVaccine] = useState('');
-    const [appliedMedication, setAppliedMedication] = useState('');
-    const [bodyScore, setBodyScore] = useState('');
-    const [observation, setObservation] = useState('');
-
-    const handleDataAtendimentoChange = (event) => {
-        setDataAtendimento(event.target.value);
-    };
-
-    const handleAnimalNumberChange = (event) => {
-        setAnimalNumber(event.target.value);
-    };
-
-    const handleAnimalNameChange = (event) => {
-        setAnimalName(event.target.value);
-    };
-
-    const handleParticularityChange = (event) => {
-        setParticularity(event.target.value);
-    };
-
-    const handleTreatmentChange = (event) => {
-        setTreatment(event.target.value);
-    };
-
-    const handleWeightChange = (event) => {
-        setWeight(event.target.value);
-    };
-
-    const handleRegistrationVaccineChange = (event) => {
-        setRegistrationVaccine(event.target.value);
-    };
-
-    const handleAppliedMedicationChange = (event) => {
-        setAppliedMedication(event.target.value);
-    };
-
-    const handleBodyScoreChange = (event) => {
-        setBodyScore(event.target.value);
-    };
-
-    const handleObservationChange = (event) => {
-        setObservation(event.target.value);
-    };
+    const dataAtendimentoRef = useRef();
+    const animalNumberRef = useRef();
+    const animalNameRef = useRef();
+    const particularityRef = useRef();
+    const treatmentRef = useRef();
+    const weightRef = useRef();
+    const registrationVaccineRef = useRef();
+    const appliedMedicationRef = useRef();
+    const bodyScoreRef = useRef();
+    const observationRef = useRef();
 
     const handleSubmit = (event) => {
         event.preventDefault();
         // Implemente a lógica de envio ou armazenamento dos dados aqui
         console.log('Dados enviados:', {
-          dataAtendimento,
-          animalNumber,
-          animalName,
-          particularity,
-          treatment,
-          weight,
-          registrationVaccine,
-          appliedMedication,
-          bodyScore,
-          observation,
+          Data_Atendimenti: dataAtendimentoRef.current,
+          Numero_Animal: animalNumberRef.current,
+          Nome_Animal: animalNameRef.current,
+          Particularidade: particularityRef.current,
+          Tratamento: treatmentRef.current,
+          Processo: weightRef.current,
+          Registro_Vacina: registrationVaccineRef.current,
+          Medicacao: appliedMedicationRef.current,
+          Score: bodyScoreRef.current,
+          Observ: observationRef.current,
         });
       };
+      
 
 
     return(
-        <BaseLayout>
-            <div>
+        <div className="container">
             <form onSubmit={handleSubmit}></form>
             {/* construir a logica */}
             <div className="container-group">
@@ -81,103 +42,92 @@ const Atendimento_animal = () => {
             <input
                 type="date"
                 id="dataAtendimento"
-                value={dataAtendimento}
-                onChange={handleDataAtendimentoChange}
+                ref={dataAtendimentoRef}
                 required
             />
             </div>
             <div className="container-group">
-                <label htmlFor="animalNumber"></label>
+                <label htmlFor="animalNumber"> Numero Animal:</label>
                 <input
                     type="text"
                     id="animalNumber"
-                    value={animalNumber}
-                    onChange={handleAnimalNumberChange}
+                    ref={animalNumberRef}
                     required
                 />
             </div>
             <div className="container-group">
-                <label htmlFor="animalName"></label>
+                <label htmlFor="animalName">Nome Animal:</label>
                 <input
                     type="text"
                     id="animalName"
-                    value={animalName}
-                    onChange={handleAnimalNameChange}
+                    ref={animalNameRef}
                     required
                 />
             </div>
             <div className="container-group">
-                <label htmlFor="particularity"></label>
+                <label htmlFor="particularity">Particularidade:</label>
                 <input
                     type="text"
                     id="particularity"
-                    value={particularity}
-                    onChange={handleParticularityChange}
+                    ref={particularityRef}
                     required
                 />
             </div>
             <div className="container-group">
-                <label htmlFor="treatment"></label>
+                <label htmlFor="treatment">Tratamento:</label>
                 <input
                     type="text"
                     id="treatment"
-                    value={treatment}
-                    onChange={handleTreatmentChange}
+                    ref={treatmentRef}
                     required
                 />
             </div>
             <div className="container-group">
-                <label htmlFor="weight"></label>
+                <label htmlFor="weight">Peso do animal:</label>
                 <input
                     type="text"
                     id="weight"
-                    value={weight}
-                    onChange={handleWeightChange}
+                    ref={weightRef}
                     required
                 />
             </div>
             <div className="container-group">
-                <label htmlFor="registrationVaccine"></label>
+                <label htmlFor="registrationVaccine">Registro da vacina:</label>
                 <input
                     type="text"
                     id="registrationVaccine"
-                    value={registrationVaccine}
-                    onChange={handleRegistrationVaccineChange}
+                    ref={registrationVaccineRef}
                     required
                 />
             </div>
             <div className="container-group">
-                <label htmlFor="appliedMedication"></label>
+                <label htmlFor="appliedMedication">Medicação aplicada:</label>
                 <input
                     type="text"
                     id="appliedMedication"
-                    value={appliedMedication}
-                    onChange={handleAppliedMedicationChange}
+                    ref={appliedMedicationRef}
                     required
                 />
             </div>
             <div className="container-group">
-                <label htmlFor="bodyScore"></label>
+                <label htmlFor="bodyScore">Peso corporal:</label>
                 <input
                     type="text"
                     id="bodyScore"
-                    value={bodyScore}
-                    onChange={handleBodyScoreChange}
+                    ref={bodyScoreRef}
                     required
                 />
             </div>
             <div className="container-group">
-                <label htmlFor="observation"></label>
+                <label htmlFor="observation">Observação:</label>
                 <input
                     type="text"
                     id="observation"
-                    value={observation}
-                    onChange={handleObservationChange}
+                    ref={observationRef}
                     required
                 />
             </div>
         </div>
-        </BaseLayout>
     );
 };
 
