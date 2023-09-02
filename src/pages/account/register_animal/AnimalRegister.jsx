@@ -1,8 +1,6 @@
 import { useState } from "react";
-import BaseLayout from "../../../template/layout/BaseLayout";
 
-
-const Registe_animal = () => {
+const AnimalRegister = () => {
     const [idanimal, setIdAnimal] = useState('');
     const [nomeanimal, setNomeAnimal] = useState('');
     const [particularidade, setParticularidade] = useState('');
@@ -40,7 +38,7 @@ const Registe_animal = () => {
     };
 
     return(
-        <BaseLayout>
+        <>
             <div className="container-id">
                 <label htmlFor="idanimal">Id Animal:</label>
                 <input
@@ -111,8 +109,8 @@ const Registe_animal = () => {
                     required
                 />
             </div>
-        </BaseLayout>
+        </>
     );
 };
 
-export default Registe_animal;
+export default AnimalRegister;

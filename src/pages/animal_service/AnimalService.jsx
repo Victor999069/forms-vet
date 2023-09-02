@@ -1,8 +1,8 @@
-import './AtendimentoAnimal.scss';
+import './animal-service.scss';
 import { useRef } from "react";
 
 
-const Atendimento_animal = () => {
+const AnimalService = () => {
     const dataAtendimentoRef = useRef();
     const animalNumberRef = useRef();
     const animalNameRef = useRef();
@@ -131,4 +131,4 @@ const Atendimento_animal = () => {
     );
 };
 
-export default Atendimento_animal;
+export default AnimalService;

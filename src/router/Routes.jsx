@@ -9,7 +9,8 @@ import Register from "../pages/account/register/Register";
 import PasswordRecover from "../pages/account/password_recover/PasswordRecover";
 import Login from "../pages/account/login/Login";
 import Budget from "../pages/budget/Budget";
-import Atendimento_animal from "../pages/service_animal/atendimento_animal";
+import AnimalService from "../pages/animal_service/AnimalService";
+import AnimalRegister from "../pages/account/register_animal/AnimalRegister";
 
 const routes = createBrowserRouter([
   {
@@ -17,10 +18,11 @@ const routes = createBrowserRouter([
     element: <BaseLayout />,
     children: [
       { path: '/', element: <Home /> },
-      { path: '/home', element: <Home /> },
+      { path: 'home', element: <Home /> },
       { path: 'contato', element: <Contact /> },
       { path: 'sobre', element: <About /> },
-      { path: 'orcamento', element: <Budget /> }
+      { path: 'orcamento', element: <Budget /> },
+      { path: 'atendimento-animal', element: <AnimalService /> },
     ]
   },
   {
@@ -31,7 +33,7 @@ const routes = createBrowserRouter([
       { path: 'cadastro', element: <Register /> },
       { path: 'perfil', element: <Profile /> },
       { path: 'recuperar-senha', element: <PasswordRecover /> },
-      { path: 'Atendimento-animal', element: <Atendimento_animal /> }
+      { path: 'cadastro-animal', element: <AnimalRegister /> },
     ]
   },
   { path: '*', element: <NotFound /> }

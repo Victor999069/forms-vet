@@ -1,15 +1,3 @@
-:root {
-    --white: #fff;
-    --light-white: #eee;
-    --light-grey: #ccc;
-    --soft-grey: #7c7c7c;
-    --grey: #aaa;
-    --light-black: #333;
-    --petrol-green: #1b7c6c;
-    --black: #000;
-    --soft-gold: #ffae00;
-}
-
 @mixin border-radius($size) {
     border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -143,13 +131,13 @@
                 .dropdown-item {
                     position: absolute;
                     display: none;
-                    top: 39px;
-                    right: 10px;
+                    top: 37px;
+                    right: 8px;
                     width: 140px;
                     border-top: 3px solid var(--soft-gold);
                     overflow: hidden;
                     z-index: 1;
-                    background-color: var(--petrol-green);
+                    background-color: var(--petrol-dark-green);
                     @include border-radius(2px);
                     li {
                         &:not(:last-child) {

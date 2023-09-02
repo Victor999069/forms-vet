@@ -1,70 +1,61 @@
-/* loginForm.css */
+@mixin border-radius($size) {
+    border-radius: $size;
+    -webkit-border-radius: $size;
+    -moz-border-radius: $size;
+}
+@mixin border-top-right-radius($size) {
+    border-top-right-radius: $size;
+    border-bottom-right-radius: $size;
+}
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .container-email,
-  .container-senha {
-    margin-bottom: 20px;
-  }
-  
-  label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-  }
-  
-  /* Estilo para os botões */
-  .container__fr-control {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-  }
-  
-  .secondary {
-    background-color: #ccc;
-    color: #333;
-    margin-right: 10px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .secondary:hover {
-    background-color: #999;
-  }
-  
-  /* Botão de login com estilo primário */
-  .primary {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .primary:hover {
-    background-color: #0056b3;
-  }
-  
+.container-login {
+    position: relative;
+    margin: 100px 0 60px 0;
+    box-sizing: border-box;
+    &__content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 320px;
+        margin: 0 auto;
+        padding: 20px 30px;
+        background-color: var(--soft-white);
+        border: 1px solid var(--light-grey);
+        box-shadow: 2px 2px 4px var(--light-black);
+        @include border-radius(6px);
+        &__logo {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+            &__title,
+            &__text {
+                font-family: sans-serif;
+                color: var(--light-black);
+            }
+            &__title {
+                border-bottom: 1px solid var(--grey);
+                font-size: 32px;
+                text-align: center;
+                text-transform: uppercase;
+                text-shadow: 1px 1px 2px var(--light-black);
+                margin-bottom: 8px;
+            }
+            &__text {
+                font-size: 13px;
+                margin-bottom: 10px;
+            }
+        }
+        &__form {
+            &__control {
+                display: flex;
+                flex-direction: column;
+                margin-top: 20px;
+                &__link-group {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}

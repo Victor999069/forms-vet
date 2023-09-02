@@ -1,0 +1,21 @@
+.section-header {
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.header-h1, .header-h4 {
+    line-height: 1;
+    padding: 0.2rem 0.6rem;
+}
+.header-h1 {
+    color: var(--petrol-green);
+    margin-bottom: 0.4rem;
+    font-family: 'Lucida Sans Unicode';
+    font-size: 36px;
+}
+.header-h4 {
+    margin-bottom: 0.6rem;
+    color: var(--light-black);
+    font-size: 18px;
+}

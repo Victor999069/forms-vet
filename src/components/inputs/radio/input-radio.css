@@ -1,0 +1,28 @@
+.radio-box {
+    display: flex;
+    align-items: center;
+    margin-left: 6px;
+    padding: 0.2rem 0.4rem;
+    background-color: var(--white);
+    border: 1px solid var(--light-grey);
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    user-select: none;
+}
+.radio-box:not(:first-child) {
+    margin-top: 6px;
+}
+.radio-box > .radio-label {
+    display: flex;
+    color: var(--grey);
+    margin-left: 4px;
+    cursor: pointer;
+}
+.radio-box > .input-radio {
+    width: 16px;
+    height: 16px;
+}
+.input-radio:checked ~ .radio-label {
+    color: var(--petrol-green);
+}

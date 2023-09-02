@@ -5,8 +5,8 @@ import { PersonCircle } from '../../components/style-icons/StyledIcons';
 const Navbar = () => {
     const navLinks = {
         menu: [
-            { link: '/servicos', text: 'Serviços' },
-            { link: '/negocios', text: 'Negócios' },
+            { link: '/orcamento', text: 'Orçamento' },
+            { link: '/atendimento-animal', text: 'Atendimento Animal' },
             { link: '/contato', text: 'Contato' },
             { link: '/sobre', text: 'Sobre' }
         ],
@@ -15,7 +15,10 @@ const Navbar = () => {
                 icon: <PersonCircle />,
                 links: [
                     { link: '/conta/cadastro', text: 'Cadastro' },
-                    { link: '/conta/login', text: 'Login' }
+                    { link: '/conta/cadastro-animal', text: 'Cadastro Animal' },
+                    { link: '/conta/login', text: 'Login' },
+                    { link: '/conta/perfil', text: 'Meu Perfil' },
+                    { link: '/conta/recuperar-senha', text: 'Recuperar Senha' },
                 ]
             }
         ]
