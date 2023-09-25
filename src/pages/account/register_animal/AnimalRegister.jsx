@@ -1,7 +1,8 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import ButtonSimple from '../../../components/button/ButtonSimple';
 
 const AnimalRegister = () => {
-    const idanimalRef = useRef(''); 
+    const [idanimal, setIdAnimal] = useState(null);
     const nomeanimalRef = useRef('');
     const particularidadeRef = useRef('');
     const cartaovacinaRef = useRef('');
@@ -9,49 +10,60 @@ const AnimalRegister = () => {
     const racaRef = useRef('');
     const sexoRef = useRef('');
 
+    const gerarIdAnimal = () => {
+        const novoId = Math.floor(Math.random() * 100000) + 1;
+        return novoId;
+    };
+
+    const handleSalvar = () => {
+        const idNovo = gerarIdAnimal();
+        setIdAnimal(idNovo);
+    };
+
     return(
-        <div>
+        <div className="container">
             <div className="container-id">
                 <label htmlFor="idanimal">Id Animal:</label>
                 <input
                     type="text"
                     id="idanimal"
-                    ref={idanimalRef}
+                    readOnly
+                    value={idanimal}
                     required
                 />
             </div>
             <div className="container-animal">
-                <label htmlFor="nomeanimal">Nome Animal:</label>
+                <label htmlFor="nomeanimalRef">Nome Animal:</label>
                 <input
                     type="text"
-                    id="nomeanimal"
+                    id="nomeanimalRef"
                     ref={nomeanimalRef}
                     required
                 />
             </div>
             <div className="container-particularidade">
-                <label htmlFor="particularidade">Particularidade:</label>
+                <label htmlFor="particularidadeRef">Particularidade:</label>
                 <input
                     type="text"
-                    id="particularidade"
+                    id="particularidadeRef"
                     ref={particularidadeRef}
                     required
                 />
             </div>
             <div className="container-cartao">
-                <label htmlFor="cartaovacina">Cartão Vacina:</label>
+                <label htmlFor="cartaovacinaRef">Cartão Vacina:</label>
                 <input
                     type="text"
-                    id="cartaovacina"
+                    id="cartaovacinaRef"
                     ref={cartaovacinaRef}
                     required
                 />
             </div>
             <div className="container-idade">
-                <label htmlFor="idade">Idade:</label>
+                <label htmlFor="idadeRef">Idade:</label>
                 <input
                     type="text"
-                    id="idade"
+                    id="idadeRef"
                     ref={idadeRef}
                     required
                 />
@@ -60,19 +72,24 @@ const AnimalRegister = () => {
                 <label htmlFor="raca">Raça:</label>
                 <input
                     type="text"
-                    id="raca"
+                    id="racaRef"
                     ref={racaRef}
                     required
                 />
             </div>
             <div className="container-sexo">
-                <label htmlFor="sexo">Sexo:</label>
+                <label htmlFor="sexoRef">Sexo:</label>
                 <input
                     type="text"
-                    id="sexo"
-                    value={sexoRef}
+                    id="sexoRef"
+                    ref={sexoRef}
                     required
                 />
+            </div>
+            <div className="form-container__fr-control">
+                <ButtonSimple type="button" onClick={handleSalvar}>
+                Salvar
+                </ButtonSimple>
             </div>
         </div>
     );
