@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import ButtonSimple from '../../../components/button/ButtonSimple';
+//import ButtonSimple from '../../../components/button/ButtonSimple';
 
 
 const Budget = () => {
@@ -22,15 +22,15 @@ const Budget = () => {
 
     const dataform = dataAtual.toISOString().split('T')[0];
 
-    const gerarIdOrcamento = () => {
-        const novoId = Math.floor(Math.random() * 100000) + 1;
-        return novoId;
-    };
+   // const gerarIdOrcamento = () => {
+    //    const novoId = Math.floor(Math.random() * 100000) + 1;
+    //    return novoId;
+    //};
 
-    const handleSalvarOrcamento = () => {
-        const Idnovo = gerarIdOrcamento();
-        return Idnovo;
-    };
+    //const handleSalvarOrcamento = () => {
+   //     const Idnovo = gerarIdOrcamento();
+     //   return Idnovo;
+ //   };
 
     return(
         <div className="container">
@@ -116,11 +116,6 @@ const Budget = () => {
                     ref={statusorca}
                     required
                 />
-            </div>
-            <div className="form-container__fr-control">
-                <ButtonSimple type="button" onClick={handleSalvarOrcamento}>
-                Salvar
-                </ButtonSimple>
             </div>
         </div>
     );
