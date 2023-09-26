@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import ButtonSimple from '../../../components/button/ButtonSimple';
 
 
 const Budget = () => {
@@ -15,6 +16,21 @@ const Budget = () => {
     const handleTotalServico = (event) => {
         setTotalServico(event.target.value);
     };
+    const dataAtual = new Date();
+
+    dataAtual.setDate(dataAtual.getDate() + 15);
+
+    const dataform = dataAtual.toISOString().split('T')[0];
+
+    const gerarIdOrcamento = () => {
+        const novoId = Math.floor(Math.random() * 100000) + 1;
+        return novoId;
+    };
+
+    const handleSalvarOrcamento = () => {
+        const Idnovo = gerarIdOrcamento();
+        return Idnovo;
+    };
 
     return(
         <div className="container">
@@ -28,7 +44,7 @@ const Budget = () => {
                 />
             </div>
             <div>
-                <label htmlFor="serviçoRef">Tipo de serviço:</label>
+                <label htmlFor="serviçoRef">Tipo de Serviço:</label>
                 <input
                     type="text"
                     id="serviçoRef"
@@ -37,7 +53,7 @@ const Budget = () => {
                 />
             </div>
             <div>
-                <label htmlFor="precoservicoRef">Preço serviço:</label>
+                <label htmlFor="precoservicoRef">Preço Serviço:</label>
                 <input
                     type="text"
                     id="precoservicoRef"
@@ -46,7 +62,7 @@ const Budget = () => {
                 />
             </div>
             <div>
-                <label htmlFor="totalservico">Total serviço</label>
+                <label htmlFor="totalservico">Total Serviço</label>
                 <input
                     type="text"
                     id="totalservico"
@@ -56,7 +72,7 @@ const Budget = () => {
                 />
             </div>
             <div>
-                <label htmlFor="nomecliente">Nome cliente:</label>
+                <label htmlFor="nomecliente">Nome Cliente:</label>
                 <input
                     type="text"
                     id="nomecliente"
@@ -74,7 +90,7 @@ const Budget = () => {
                 />
             </div>
             <div>
-                <label htmlFor="emailclienteRef">E-mail cliente:</label>
+                <label htmlFor="emailclienteRef">E-mail Cliente:</label>
                 <input
                     type="email"
                     id="emailclienteRef"
@@ -83,22 +99,28 @@ const Budget = () => {
                 />
             </div>
             <div>
-                <label htmlFor="datavalidadeorca">Validade orçamento:</label>
+                <label htmlFor="datavalidadeorca">Validade Orçamento:</label>
                 <input
                     type="date"
                     id="datavalidadeorca"
                     ref={datavalidadeorca}
+                    defaultValue={dataform}
                     required
                 />
             </div>
             <div>
-                <label htmlFor="statusorca">Status orçamento:</label>
+                <label htmlFor="statusorca">Status Orçamento:</label>
                 <input
                     type="text"
                     id="statusorca"
                     ref={statusorca}
                     required
                 />
+            </div>
+            <div className="form-container__fr-control">
+                <ButtonSimple type="button" onClick={handleSalvarOrcamento}>
+                Salvar
+                </ButtonSimple>
             </div>
         </div>
     );
