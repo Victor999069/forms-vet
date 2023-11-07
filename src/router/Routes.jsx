@@ -1,5 +1,3 @@
-import express from "express";
-import { getUser } from "../controllers/user.jsx";
 import { createBrowserRouter } from "react-router-dom";
 import BaseLayout from "../templates/layout/BaseLayout";
 import Home from "../pages/home/Home";
@@ -41,7 +39,6 @@ const routes = createBrowserRouter([
   { path: '*', element: <NotFound /> }
 ]);
 
-const router = express.Router();
-router.get("/", getUser);
+
 
 export default routes;
